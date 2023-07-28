@@ -1,5 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_restaurant/home/food_page_body.dart';
 import 'package:my_restaurant/utils/colors.dart';
+import 'package:my_restaurant/widgets/big_text.dart';
+import 'package:my_restaurant/widgets/small_text.dart';
 
 class MainFooPage extends StatefulWidget {
   const MainFooPage({super.key});
@@ -23,8 +27,19 @@ class _MainFooPageState extends State<MainFooPage> {
                 children: [
                   Column(
                     children: [
-                      Text("Country"),
-                      Text("City"),
+                      BigText(
+                        text: "India",
+                        color: AppColors.mainColor,
+                      ),
+                      Row(
+                        children: [
+                          SmallText(
+                            text: "WB",
+                            color: Colors.black54,
+                          ),
+                          Icon(Icons.arrow_drop_down_rounded),
+                        ],
+                      ),
                     ],
                   ),
                   Center(
@@ -45,6 +60,7 @@ class _MainFooPageState extends State<MainFooPage> {
               ),
             ),
           ),
+          FoodPageBody(),
         ],
       ),
     );
