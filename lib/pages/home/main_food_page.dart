@@ -1,7 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:my_restaurant/home/food_page_body.dart';
+import 'package:flutter/services.dart';
+import 'package:my_restaurant/pages/home/food_page_body.dart';
 import 'package:my_restaurant/utils/colors.dart';
+import 'package:my_restaurant/utils/dimensions.dart';
 import 'package:my_restaurant/widgets/big_text.dart';
 import 'package:my_restaurant/widgets/small_text.dart';
 
@@ -15,13 +17,22 @@ class MainFooPage extends StatefulWidget {
 class _MainFooPageState extends State<MainFooPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: Color.fromRGBO(0, 0, 0, 0.055)
+            //color set to transperent or set your own color
+            ));
     return Scaffold(
+      /*appBar: AppBar(
+        title: Text("data"),
+      ),*/
       body: Column(
         children: [
           Container(
             child: Container(
-              margin: EdgeInsets.only(top: 45, bottom: 15),
-              padding: EdgeInsets.only(left: 20, right: 20),
+              margin: EdgeInsets.only(
+                  top: Dimesions.height45, bottom: Dimesions.height15),
+              padding: EdgeInsets.only(
+                  left: Dimesions.height20, right: Dimesions.height20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -44,14 +55,15 @@ class _MainFooPageState extends State<MainFooPage> {
                   ),
                   Center(
                     child: Container(
-                      width: 45,
-                      height: 45,
+                      width: Dimesions.height45,
+                      height: Dimesions.height45,
                       child: Icon(
                         Icons.search,
                         color: Colors.white,
+                        size: Dimesions.iconSize24,
                       ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(Dimesions.radius15),
                         color: AppColors.mainColor,
                       ),
                     ),
@@ -60,7 +72,11 @@ class _MainFooPageState extends State<MainFooPage> {
               ),
             ),
           ),
-          FoodPageBody(),
+          Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            ),
+          ),
         ],
       ),
     );
