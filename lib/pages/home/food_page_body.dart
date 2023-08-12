@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:my_restaurant/utils/colors.dart';
 import 'package:my_restaurant/utils/dimensions.dart';
+import 'package:my_restaurant/widgets/app_column.dart';
 import 'package:my_restaurant/widgets/big_text.dart';
 import 'package:my_restaurant/widgets/icon_and_text_widget.dart';
 import 'package:my_restaurant/widgets/small_text.dart';
@@ -255,63 +256,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     top: Dimesions.height15,
                     left: Dimesions.height15,
                     right: Dimesions.height15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Chinese Side"),
-                    SizedBox(
-                      height: Dimesions.height10,
-                    ),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                            5,
-                            (index) => Icon(
-                              Icons.star,
-                              color: AppColors.mainColor,
-                              size: Dimesions.height15,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: Dimesions.height10,
-                        ),
-                        SmallText(text: "4.5"),
-                        SizedBox(
-                          width: Dimesions.height10,
-                        ),
-                        SmallText(text: "1287"),
-                        SizedBox(
-                          width: Dimesions.height10,
-                        ),
-                        SmallText(text: "comments")
-                      ],
-                    ),
-                    SizedBox(
-                      height: Dimesions.height20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(
-                          icon: Icons.circle_sharp,
-                          text: "Normal",
-                          iconColor: AppColors.iconColor1,
-                        ),
-                        IconAndTextWidget(
-                          icon: Icons.location_on,
-                          text: "1.7km",
-                          iconColor: AppColors.mainColor,
-                        ),
-                        IconAndTextWidget(
-                          icon: Icons.access_time_rounded,
-                          text: "32min",
-                          iconColor: AppColors.iconColor2,
-                        ),
-                      ],
-                    ),
-                  ],
+                child: AppColumn(
+                  text: "Food Name",
                 ),
               ),
             ),
