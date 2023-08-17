@@ -17,10 +17,11 @@ class MainFooPage extends StatefulWidget {
 class _MainFooPageState extends State<MainFooPage> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(statusBarColor: Color.fromRGBO(0, 0, 0, 0.055)
-            //color set to transperent or set your own color
-            ));
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Color(0x00000000),
+      statusBarIconBrightness: Brightness.dark,
+      //color set to transperent or set your own color
+    ));
     return Scaffold(
       /*appBar: AppBar(
         title: Text("data"),
