@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_restaurant/controllers/popular_product_controller.dart';
 import 'package:my_restaurant/controllers/recommended_product_controller.dart';
+import 'package:my_restaurant/pages/cart/cart_page.dart';
 import 'package:my_restaurant/pages/food/popular_food_detail.dart';
 import 'package:my_restaurant/pages/food/recommended_food_detail.dart';
 import 'package:my_restaurant/pages/home/main_food_page.dart';
+import 'package:my_restaurant/routes/route_helper.dart';
 import 'helper/dependencies.dart' as dep;
 
 Future<void> main() async {
@@ -25,12 +27,13 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MainFooPage(),
+
+      //home: MainFooPage(),
       //home: RecommendedFoodDetails(),
       //home: PopularFoodDetail(),
+      //initialRoute: RouteHelper.initial,
+      //getPages: RouteHelper.routes,
+      home: CartPage(),
     );
   }
 }
