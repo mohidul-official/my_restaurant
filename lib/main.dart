@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_restaurant/app_scroll_behavior.dart';
 import 'package:my_restaurant/controllers/popular_product_controller.dart';
 import 'package:my_restaurant/controllers/recommended_product_controller.dart';
 import 'package:my_restaurant/pages/cart/cart_page.dart';
@@ -26,14 +27,15 @@ class MyApp extends StatelessWidget {
     Get.find<RecommendedProductController>().getRecommendedProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      scrollBehavior: AppScrollBehavior(),
       title: 'Flutter Demo',
 
-      //home: MainFooPage(),
+      home: MainFooPage(),
       //home: RecommendedFoodDetails(),
       //home: PopularFoodDetail(),
-      //initialRoute: RouteHelper.initial,
-      //getPages: RouteHelper.routes,
-      home: CartPage(),
+      initialRoute: RouteHelper.initial,
+      getPages: RouteHelper.routes,
+      //home: CartPage(),
     );
   }
 }
