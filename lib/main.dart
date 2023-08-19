@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
       scrollBehavior: AppScrollBehavior(),
       title: 'Flutter Demo',
 
-      home: MainFooPage(),
+      //home: MainFooPage(),
       //home: RecommendedFoodDetails(),
       //home: PopularFoodDetail(),
-      initialRoute: RouteHelper.initial,
+      initialRoute: RouteHelper.getInitial(),
       getPages: RouteHelper.routes,
       //home: CartPage(),
     );
